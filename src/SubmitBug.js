@@ -14,14 +14,15 @@ function SubmitBug() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newBug = {
-      title,
-      description,
-      status,
-      priority,
-      assigned_to: assignedTo,
-      createdAt: createdAt,
-    };
+   const newBug = {
+    title,
+    description,
+    status,
+    priority,
+    assigned_to: assignedTo,
+    createdAt: createdAt,
+    finishedAt: null  // Add this line
+  };
 
     try {
       await axios.post("http://127.0.0.1:5000/bugs", newBug); // Send the bug data to backend
